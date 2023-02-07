@@ -1,0 +1,46 @@
+{
+  "frontend": {
+    "admin": {
+      "documents": {
+        "index": "List Of Documents",
+        "draft": "List Of Draft"
+      },
+      "users": {
+        "title": "Account Management",
+        "index": "List Of Accounts",
+        "edit": "Edit Account",
+        "create": "Add Account",
+        "twofa": "2FA Settings"
+      },
+      "roles": {
+        "index": "Role of Account Management",
+        "create": "Add Role",
+        "edit": "Edit Role",
+        "role": "Decentralization Role"
+      },
+      
+      "application": {
+        "index": "Application Form",
+        "title": "Application",
+        "staffInsurance": "",
+        "createModel": "Create Model"
+      },
+      "documentTemplate": {
+        "index": "Overview"
+      },
+      "documentTemplates": {
+        "index": "List of Document Template",
+        "title": "Document Templates",
+        "create": "Create Document Templates",
+        "draft": "List of Draft"
+      },
+
+      "tenants" : {
+        "index": "Tenants",
+        "title": "Tenants",
+        "create": "Create Tenants",
+        "edit": "Edit Tenants"
+      }
+    }
+  }
+}

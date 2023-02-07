@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  db:
+    image: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=dev
+      - POSTGRES_PASSWORD=mq123
+      - POSTGRES_DB=app_platform
+  redis:
+    image: 'bitnami/redis:latest'
+    ports: 
+      - 6377:6379
+    environment: 
+      - ALLOW_EMPTY_PASSWORD=yes
+

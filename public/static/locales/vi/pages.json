@@ -1,0 +1,548 @@
+{
+  "action": "Action",
+  "login": {
+    "title": "Trang đăng nhập",
+    "description": "",
+    "content": "Chào mừng! Xin hãy đăng nhập vào tài khoản của bạn.",
+    "rememberMe": "Nhớ mật khẩu",
+    "forgotPassword": "Quên mật khẩu?",
+    "username": "Tên đăng nhập",
+    "password": "Mật khẩu",
+    "otp": "OTP"
+  },
+  "forgotPassword": {
+    "title": "Forgot Password",
+    "description": "",
+    "content": "Enter your email and we will send you a password reset link.",
+    "email": "Email"
+  },
+  "resetPassword": {
+    "title": "Reset Password",
+    "description": "",
+    "content": "Enter the new password and re-enter the password to reset the password",
+    "newPassword": "New Password",
+    "reNewPassword": "Re-new Password"
+  },
+  "changePassword": {
+    "title": "Change Password",
+    "password": "Password",
+    "rePassword": "Re-password"
+  },
+  "dashboard": {
+    "index": {
+      "title": "Bảng điều khiển",
+      "description": "Tại màn hình này, Bạn có thể chat với tư vấn viên hoặc bot"
+    }
+  },
+  "application": {
+    "index": {
+      "index": {
+        "title": "Tổng quan",
+        "description": "Chấp nhận và nộp đơn"
+      },
+      "overview": {
+        "moreFilters": "Lọc mẫu đơn",
+        "apply": "Áp dụng",
+        "tableList": {
+          "title": "Danh sách đơn",
+          "submited": "Đã gửi",
+          "approve": "Chấp nhận",
+          "inReview":"Đang xem xét",
+          "rejected": "Từ chối"
+        },
+        "tableDraft":{
+          "title": "Danh sách đơn nháp",
+          "draft": "Bản nháp"
+        }
+    }
+  },
+  "sendNotifacation": {
+    "index": {
+      "title": "Gửi thông báo",
+      "description": ""
+    },
+    "create": {
+      "title": "Tạo thông báo",
+      "description": ""
+    },
+    "editQnA": {
+      "title": "Sửa thông báo",
+      "description": ""
+    },
+    "table": {
+      "tagsUser": "Gửi cho những tags",
+      "stepSeed": "Các bước để gửi",
+      "sendingTime": "Thời gian gửi",
+      "loppSending": "Lặp lại gửi",
+      "name": "Tên"
+    },
+    "form": {
+      "tagsUser": "Gửi cho những tags",
+      "stepSeed": "Các bước để gửi",
+      "sendingTime": "Thời gian gửi",
+      "loppSending": "Lặp lại gửi",
+      "name": "Tên"
+    }
+  },
+
+  "users": {
+    "index": {
+      "title": "Danh sách Tài khoản",
+      "description": ""
+    },
+    "create": {
+      "title": "Tạo tài khoản mới",
+      "description": "Điền thông tin để tạo tài khoản mới"
+    },
+    "edit": {
+      "title": "Chỉnh sửa tài khoản",
+      "description": ""
+    },
+    "twofa": {
+      "title": "2-FA Settings",
+      "description": "",
+      "enabledAlready": "2FA is already enabled. You can turn it off at any time. But we do not recommend it.",
+      "notEnable": "You have not enabled 2FA. Please set up 2FA to connect to your phone for enhanced security.",
+      "twoFaRequired": "2FA is required.",
+      "link": {
+        "title": "To use two-step security. You need to install the Google Authenticator app on your mobile.",
+        "link": "You can download it here:",
+        "android": "https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_SG",
+        "ios": "https://apps.apple.com/us/app/google-authenticator/id388497605"
+      }
+    },
+    "table": {
+      "username": "Tên đăng nhập",
+      "firstName": "Tên",
+      "lastName": "Họ",
+      "roleGroup": "Nhóm quyền",
+      "group": "Nhóm",
+      "parent": "Nhóm chính",
+      "email": "Email",
+      "createdAt": "Ngày tạo",
+      "tags": "Tags",
+      "tenant": "Tenant"
+    },
+    "form": {
+      "username": "Tên đăng nhập",
+      "firstName": "Tên",
+      "lastName": "Họ",
+      "roleGroup": "Nhóm quyền",
+      "group": "Nhóm",
+      "password": "Mật khẩu",
+      "email": "Email",
+      "rePassword": "Nhập lại mật khẩu",
+      "apiKey": "API Key",
+      "qrcode": "QR Code",
+      "enable2fa": "Enable",
+      "enterCode": "Enter Code",
+      "tags": "Tags",
+      "tenant": "Tenant"
+    }
+  },
+  "QnA": {
+    "index": {
+      "title": "Hỏi & đáp",
+      "description": ""
+    },
+    "create": {
+      "title": "Tạo QnA",
+      "description": ""
+    },
+    "editQnA": {
+      "title": "Sửa câu hỏi",
+      "description": ""
+    },
+    "listQuestion": {
+      "title": "Danh sách câu hỏi",
+      "description": ""
+    },
+    "table": {
+      "question": "Câu hỏi",
+      "answer": "Trả lời",
+      "action": "Hành động"
+    },
+    "form": {
+      "question": "Câu hỏi",
+      "answer": "Trả lời",
+      "action": "Hành động"
+    }
+  },
+  "historiesMessage": {
+    "index": {
+      "title": "Lịch sử tin nhắn",
+      "description": ""
+    },
+    "table": {
+      "createdAt": "Thời gian yêu cầu",
+      "nameUser": "Người dùng",
+      "userSaid": "Người dùng nói",
+      "botsUnderstand": "Bot hiểu",
+      "intentTitle": "Cập nhật ý định",
+      "rate": "Độ tin cậy",
+      "action": "Hành động"
+    },
+    "form": {
+      "createdAt": "Thời gian yêu cầu",
+      "nameUser": "Người dùng",
+      "userSaid": "Người dùng nói",
+      "botsUnderstand": "Bot hiểu",
+      "intentTitle": "Cập nhật ý định",
+      "rate": "Độ tin cậy",
+      "action": "Hành động"
+    }
+  },
+  "roleGroups": {
+    "index": {
+      "title": "Danh sách nhóm vai trò",
+      "description": "Bạn có thể tìm kiếm hoặc lọc theo điều kiện"
+    },
+    "create": {
+      "title": "Tạo nhóm vai trò mới",
+      "description": "Điền thông tin để tạo nhóm vai trò mới"
+    },
+    "edit": {
+      "title": "Chỉnh sửa nhóm vai trò",
+      "description": ""
+    },
+    "role": {
+      "title": "Phân quyền nhóm tài khoản",
+      "description": "Chọn các quyền phù hợp cho nhóm tài khoản."
+    },
+    "table": {
+      "name": "Tên",
+      "description": "Mô tả",
+      "decentralization": "Phân quyền",
+      "parent": "Nhóm chính",
+      "createdAt": "Ngày tạo"
+    },
+    "form": {
+      "name": "Tên",
+      "description": "Mô tả",
+      "parent": "Nhóm chính"
+    }
+  },
+  "CounselorChat":{
+    "index": {
+      "title": "Nhân viên tư vấn",
+      "description": "Ở đây hiển thị danh sách những người nhắn tin đến cần tư vấn"
+    }
+  },
+
+  "settings": {
+    "index": {
+      "title": "Danh sách cài đặt",
+      "description": ""
+    },
+    "edit": {
+      "title": "Chỉnh sửa cài đặt",
+      "description": ""
+    },
+    "table": {
+      "name": "Tên",
+      "description": "Mô tả",
+      "key": "Key",
+      "value": "Value",
+      "valueNumber": "Tỷ lệ (%)",
+      "createdAt": "Ngày tạo"
+    },
+    "form": {
+      "name": "Tên",
+      "description": "Mô tả",
+      "key": "Key",
+      "valueNumber": "Tỷ lệ (%)",
+      "value": "Value"
+    }
+  },
+  "groups": {
+    "index": {
+      "title": "Danh sách nhóm",
+      "description": "Bạn có thể tìm kiếm hoặc lọc theo điều kiện"
+    },
+    "create": {
+      "title": "Tạo nhóm mới",
+      "description": "Điền thông tin để tạo nhóm mới"
+    },
+    "edit": {
+      "title": "Chỉnh sửa nhóm",
+      "description": ""
+    },
+    "table": {
+      "code": "ID",
+      "name": "Tên",
+      "description": "Mô tả",
+      "parent": "Nhóm chính",
+      "role": "Vai trò",
+      "createdAt": "Ngày tạo"
+    },
+    "form": {
+      "code": "ID",
+      "name": "Tên",
+      "parent": "Nhóm chính",
+      "role": "Vai trò",
+      "description": "Mô tả"
+    }
+  },
+  "responses": {
+    "index": {
+      "title": "Danh sách bước",
+      "description": "Bạn có thể tìm kiếm hoặc lọc theo điều kiện"
+    },
+    "create": {
+      "title": "Tạo bước mới",
+      "description": "Điền thông tin để tạo nhóm mới"
+    },
+    "edit": {
+      "title": "Chỉnh sửa bước",
+      "description": ""
+    },
+    "table": {
+      "title": "Tên bước",
+      "description": "Mô tả"
+    },
+    "form": {
+      "title": "Tên bước",
+      "description": "Mô tả"
+    }
+  },
+  "chatBox": {
+    "placeHolder": "Nhập tin nhắn..."
+  },
+  "sampleSentences": {
+    "index": {
+      "title": "Danh sách câu mẫu",
+      "description": "Bạn có thể tìm kiếm hoặc lọc theo điều kiện"
+    },
+    "create": {
+      "title": "Tạo câu mẫu mới",
+      "description": "Điền thông tin để tạo câu mẫu mới"
+    },
+    "edit": {
+      "title": "Chỉnh sửa câu mẫu",
+      "description": ""
+    },
+    "table": {
+      "name": "Nội dung câu mẫu",
+      "intent": "Ý định",
+      "entity": "Thực thể",
+      "action": "Hành động",
+      "tag": "Từ khóa"
+    },
+    "form": {
+      "name": "Nội dung câu mẫu",
+      "intent": "Ý định",
+      "entity": "Thực thể",
+      "action": "Hành động",
+      "keyWord": "Từ khóa",
+      "sentenceSelection": "Bước 1: Bôi đen từ khóa quan trọng trong mẫu câu"
+    }
+  },
+  "entities": {
+    "index": {
+      "title": "Danh sách thực thể",
+      "description": "Bạn có thể tìm kiếm hoặc lọc theo điều kiện"
+    },
+    "create": {
+      "title": "Tạo thực thể mới",
+      "description": "Điền thông tin để tạo thực thể mới"
+    },
+    "edit": {
+      "title": "Chỉnh sửa thực thể",
+      "description": ""
+    },
+    "table": {
+      "name": "Tên thực thể",
+      "action": "Hành động",
+      "description": "Mô tả",
+      "type": "Loại thực thể"
+    },
+    "form": {
+      "name": "Tên thực thể",
+      "action": "Hành động",
+      "description": "Mô tả",
+      "type": "Loại thực thể"
+    }
+  },
+  "intents": {
+    "index": {
+      "title": "Danh sách ý định",
+      "description": "Bạn có thể tìm kiếm hoặc lọc theo điều kiện"
+    },
+    "create": {
+      "title": "Tạo ý định mới",
+      "description": "Điền thông tin để tạo ý định mới"
+    },
+    "edit": {
+      "title": "Chỉnh sửa ý định",
+      "description": ""
+    },
+    "table": {
+      "title": "Tiêu đề",
+      "name": "Ý định",
+      "action": "Hành động",
+      "description": "Mô tả"
+    },
+    "form": {
+      "title": "Tiêu đề",
+      "name": "Ý định",
+      "action": "Hành động",
+      "description": "Mô tả"
+    }
+  },
+  "tags": {
+    "index": {
+      "title": "Danh sách từ khóa",
+      "description": "Bạn có thể tìm kiếm hoặc lọc theo điều kiện"
+    },
+    "create": {
+      "title": "Tạo từ khóa mới",
+      "description": "Điền thông tin để tạo từ khóa mới"
+    },
+    "edit": {
+      "title": "Chỉnh sửa từ khóa",
+      "description": ""
+    },
+    "table": {
+      "content": "Từ khóa",
+      "intentSampleId": "Câu mẫu",
+      "action": "Hành động",
+      "entityId": "Thực thể",
+      "start": "Vị trí bắt đầu",
+      "end": "Vị trí kết thúc",
+      "description": "Mô tả",
+      "synonym": "Từ đồng nghĩa"
+    },
+    "form": {
+      "content": "Từ khóa",
+      "intentSampleId": "Câu mẫu",
+      "entityId": "Thực thể",
+      "action": "Hành động",
+      "start": "Vị trí bắt đầu",
+      "end": "Vị trí kết thúc",
+      "description": "Mô tả",
+      "synonym": "Từ đồng nghĩa"
+    }
+  },
+  "bots": {
+    "index": {
+      "title": "Danh sách Bot",
+      "description": "",
+      "listBot": "Những bot đã sở hữu"
+    },
+    "create": {
+      "title": "Tạo Bot mới",
+      "description": "Điền thông tin để tạo Bot mới"
+    },
+    "edit": {
+      "title": "Chỉnh sửa Bot",
+      "description": ""
+    },
+    "table": {
+      "name": "Tên Bot",
+      "description": "Mô tả",
+      "search": "Tìm kiếm bot",
+      "intent": "Ý định",
+      "entity": "Thực thể",
+      "sampleSentence": "Câu mẫu",
+      "lastTrainedTime": "Huấn luyện cuối",
+      "noBot": "Chưa có bot nào",
+      "totalBot": "Hiện có {{total}} bot",
+      "scenario": "Kịch bản",
+      "deleteBot": "Xóa Bot"
+    },
+    "form": {
+      "name": "Tên Bot",
+      "description": "Mô tả",
+      "rateBot": "Bạn đánh giá thế nào về tôi"
+    }
+  },
+  "roleBotUser": {
+    "index": {
+      "title": "Vai trò trên bot",
+      "description": ""
+    },
+    "create": {
+      "title": "Tạo vai trò mới",
+      "description": ""
+    },
+    "edit": {
+      "title": "Chỉnh sửa Vai trò",
+      "description": ""
+    },
+    "table": {
+      "user": "UserName người dùng",
+      "role": "Quyền"
+    },
+    "form": {
+      "user": "UserName người dùng",
+      "role": "Quyền"
+    }
+  },
+  "stories": {
+    "index": {
+      "title": "Quản lý hội thoại",
+      "description": "Tại màn hình này, Bạn có thể thiết kế kịch bản cho Bot"
+    },
+    "create": {
+      "title": "Tạo kịch bản mới",
+      "description": ""
+    },
+    "edit": {
+      "title": "Chỉnh sửa kịch bản",
+      "description": ""
+    },
+    "import": {
+      "title": "Nhập QnA vào kịch bản"
+    },
+    "table": {
+      "name": "Tên kịch bản"
+    },
+    "form": {
+      "name": "Tên kịch bản",
+      "step": "Bước",
+      "condition": "Điều kiện Bot trả lời:",
+      "intent": "Ý định",
+      "sampleSentence": "Câu mẫu",
+      "text": "Text Card"
+    },
+    "addButton": {
+      "title": "Cấu hình nút",
+      "form": {
+        "name": "Tên",
+        "action": "Hành động"
+      }
+    }
+  },
+  "botRoles": {
+    "index": {
+      "title": "Vai trò trên bot",
+      "description": "Từ màn hình này, Bạn có thể chỉ định vai trò mới trên bot của bạn"
+    },
+    "edit": {
+      "title": "Sửa vai trò trên bot"
+    },
+    "role": {
+      "title": "Phân quyền nhóm bot",
+      "description": "Chọn có quyền phù hợp cho nhóm bot"
+    },
+    "form": {
+      "email": "Email",
+      "role": "Vai trò",
+      "emailHolder": "Nhập một hoặc nhiều email tách nhau bằng dấu phẩy (đã có tài khoản trên hệ thống)"
+    }
+  },
+  "errors": {
+    "403": {
+      "title": "Bạn không có quyền truy cập",
+      "description": "Xin lỗi, bạn không có quyền truy cập trang này.",
+      "permissionDetail": "Trang này yêu cầu quyền: \"{{permission}}\" với giá trị: \"{{requirePermission}}\". Nhưng bạn có: \"{{userPermission}}\"."
+    },
+    "404": {
+      "title": "404! Không tìm thấy trang",
+      "notfound": "Oops! Không tìm thấy trang",
+      "content": "Trang bạn đang truy cập có thể đã bị xóa hoặc tạm thời không có sẵn. Vui lòng quay lại trang này sau!",
+      "goBack": "Quay lại"
+    }
+  }
+}
+}

@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": "./",
+    "paths": {
+      "@root/*": [
+        "./*"
+      ],
+      "@core/*": [
+        "./server/libs/core/*"
+      ],
+      "@app/*": [
+        "./server/app/*"
+      ],
+      "@libs/*": [
+        "./server/libs/*"
+      ],
+      "@helpers/*": [
+        "./server/helpers/*"
+      ],
+      "@config/*": [
+        "./config/*"
+      ],
+      "@src/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "src/pages/api/upload/index.ts"  ]
+}

@@ -1,0 +1,87 @@
+{
+  "frontend": {
+    "admin": {
+      "dashboard": {
+        "index": "Bảng điều khiển"
+      },
+      "application": {
+        "index": "Đơn đăng ký"
+      },
+      "users": {
+        "index": "Quản lý tài khoản",
+        "edit": "Chỉnh sửa tài khoản",
+        "create": "Tạo tài khoản",
+        "twofa": "Cài đặt 2FA"
+      },
+      "roleGroups": {
+        "index": "Danh sách Nhóm quyền",
+        "create": "Tạo Nhóm quyền",
+        "edit": "Chỉnh sửa Nhóm quyền",
+        "role": "Nhóm vai trò phân cấp"
+      },
+      "groups": {
+        "index": "Danh sách nhóm",
+        "create": "Tạo nhóm",
+        "edit": "Chỉnh sửa nhóm"
+      },
+      "settings": {
+        "index": "Cài đặt"
+      },
+      "NLP": {
+        "title": "NLP"
+      },
+      "sampleSentences": {
+        "index": "Câu mẫu",
+        "edit": "Chỉnh sửa câu mẫu",
+        "create": "Tạo câu mẫu"
+      },
+      "QnA": {
+        "index": "QnA",
+        "editQnA": "Sửa câu hỏi",
+        "create": "Tạo QnA",
+        "listQuestion": "Danh sách câu hỏi"
+      },
+      "entities": {
+        "index": "Thực thể",
+        "edit": "Chỉnh sửa thực thể",
+        "create": "Tạo thực thể"
+      },
+      "intents": {
+        "index": "Ý định",
+        "edit": "Chỉnh sửa ý định",
+        "create": "Tạo ý định"
+      },
+      "tags": {
+        "index": "Từ khóa",
+        "edit": "Chỉnh sửa từ khóa",
+        "create": "Tạo từ khóa"
+      },
+      "generalSettings": {
+        "index": "Cài đặt chung"
+      },
+      "bots": {
+        "index": "Bot",
+        "edit": "Chỉnh sửa Bot",
+        "create": "Tạo Bot"
+      },
+      "historiesMessage": {
+        "index": "Lịch sử",
+        "edit": "Sửa lịch sử",
+        "create": "Tạo mới lịch sử"
+      },
+      "stories": {
+        "index": "Kịch bản"
+      },
+      "botRoles": {
+        "index": "Vai trò trên bot",
+        "role": "Phân quyền nhóm bot"
+      },
+      "CounselorChat": {
+        "index": "Tư vấn viên"
+      },
+      "sendNotifacation": {
+        "index": "Gửi thông báo"
+      }
+    }
+  }
+}

@@ -1,0 +1,396 @@
+.content.story {
+  background: #fff;
+  padding: 0 !important;
+  margin: -80px 0px 8px !important;
+  border-radius: 0 !important;
+
+  .left-menu {
+    background-color: #E9EDEE;
+    height: calc(100vh - 170px);
+    overflow-y: scroll;
+
+    .action {
+      padding: 24px 25px 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .story-list {
+      padding: 12px 0 24px;
+      height: 100%;
+
+      .story-group {
+        width: 100%;
+        float: left;
+        position: relative;
+        padding: 5px 25px 10px;
+        background-color: #E9EDEE;
+
+        .group-connected-sortable {
+          width: 100%;
+          float: left;
+
+          .holder-step {
+            width: 23%;
+            float: left;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 1;
+
+            &:hover {
+              transform: scale(1.2);
+              transition: transform .2s;
+              box-shadow: 1px 1px 20px #d3d3d3;
+              z-index: 10;
+
+              .mq-btn-del-step {
+                display: block;
+              }
+            }
+
+            &.selected {
+              .mq-block {
+                border: 2px solid #b51d1c !important;
+              }
+            }
+
+            .mq-block {
+              height: 42px;
+              border: 1px solid #d3d3d3;
+              border-radius: 0.25rem;
+              background-color: #ffffff;
+              cursor: pointer;
+              width: 100%;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              font-size: 14px;
+              text-align: center;
+              padding: 4px 4px 0 4px;
+
+              span {
+                vertical-align: top;
+                line-height: 120%;
+                height: 16px;
+                overflow: hidden;
+                word-break: break-all;
+                text-overflow: ellipsis;
+                /* display: inherit; */
+                white-space: nowrap;
+                width: 100%;
+              }
+
+              .trigger-step {
+                position: relative;
+                top: -1px;
+                font-size: 11px;
+                color: #a9a9a9;
+              }
+            }
+
+            .mq-btn-del-step {
+              display: none;
+              position: absolute;
+              top: -11px;
+              right: -7px;
+              border-radius: 50%;
+              background-color: #FFFFFF;
+              padding: 0;
+              width: 18px;
+              height: 18px;
+
+              span.anticon-close {
+                position: relative;
+                top: -2px;
+              }
+            }
+          }
+
+          .holder-add-step {
+            float: left;
+            width: 23%;
+
+            .mq-block-add-step {
+              height: 42px;
+              width: 100%;
+              background-color: #ffffff;
+              border: 1px dashed #d3d3d3;
+            }
+          }
+        }
+
+        .mq-del-button {
+          color: red;
+          background: none;
+          border: none;
+          position: absolute;
+          top: 5px;
+          right: 4px;
+          font-size: 18px;
+          display: none;
+          padding: 0;
+        }
+
+        .story-move {
+          color: #999;
+          background: none;
+          border: none;
+          position: absolute;
+          top: 34px;
+          right: 11px;
+          font-size: 18px;
+          display: none;
+          z-index: 1;
+          padding: 0;
+        }
+
+        &:hover {
+
+          .mq-del-button,
+          .story-move {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .right-menu {
+    background-color: #eef4f6;
+    width: 100%;
+    padding: 24px 0 0 24px;
+    position: relative;
+    height: calc(100vh - 170px);
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+    .step-title {
+      font-size: 16px;
+    }
+
+    .step-intent-container {
+      max-width: 70%;
+      background-color: #FFF;
+      margin-top: 10px;
+      padding: 8px 10px 15px 8px;
+      position: relative;
+
+      .ctn-name {
+        font-size: 28px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+
+        input.inputName {
+          margin-left: 8px;
+
+          &:not(:hover, :focus) {
+            border-color: #fff;
+          }
+        }
+      }
+
+      .btn-more-options {
+        padding: 0;
+
+        .anticon {
+          font-size: 20px;
+        }
+      }
+
+      .image-step-form-dragger {
+        display: flex;
+        align-items: 'center';
+        .ant-upload-btn {
+          padding: 0;
+          height: auto;
+          min-height: 200px;
+        }
+      }
+
+      .btn-select-sort {
+        display: none;
+        position: absolute;
+        right: 0px;
+        height: 100%;
+        top: 50%;
+        transform: translate(100%, -50%);
+        z-index: 2;
+        padding: 0;
+        font-size: 20px;
+        cursor: move;
+	      cursor: -webkit-grabbing;
+      }
+
+
+    }
+
+    .step-space-container {
+      max-width: 70%;
+    }
+
+    .hr-dashed {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #090909;
+      border-style: none none solid;
+      color: #fff;
+      background-color: #fff;
+    }
+
+    .header-btn {
+      width: 100%;
+      padding: 0 20px;
+      text-align: right;
+    }
+  }
+
+  .ctn-item-select-sort {
+    &:hover .btn-select-sort {
+      display: block;
+    }
+  }
+
+  .group-btn-actions-stories {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+
+    &>button:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    &>button {
+      height: 55px;
+      padding: 4px 20px;
+
+      .action-name {
+        display: none;
+      }
+
+      &:focus {
+        border: inherit;
+        color: inherit;
+      }
+
+      &:hover {
+        border: inherit;
+        color: inherit;
+        box-shadow: 1px 1px 20px #d3d3d3;
+        transform: scale(1.4);
+        z-index: 1;
+
+        .action-name {
+          display: block;
+          font-size: 8px;
+        }
+      }
+
+      &>.anticon {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .child-step {
+    margin-bottom: 40px;
+
+    button, textarea {
+      border-radius: 0;
+    }
+  }
+
+  .ctn-slide-image {
+    overflow-x: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+    &::-webkit-scrollbar {
+      display: block;
+      width: 5px;
+      height: 8px;
+      background: #efefef;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #888;
+    }
+
+    .main-slide-image {
+      display: inline-flex;
+      align-items: flex-start;
+
+      .item-slide-image {
+        width: 250px;
+        min-height: 353px;
+        padding: 12px;
+        border: 1px solid #d9d9d9;
+
+        &:not(:last-child) {
+          margin-right: 18px;
+        }
+
+
+        input.title-slide-image {
+          padding-left: 2px;
+
+          &:not(:hover, :focus) {
+            border-color: #fff;
+          }
+        }
+
+        .btn-delete-slide-image {
+          position: absolute;
+          top: -28px;
+          right: -15px;
+          border: 1px solid;
+          z-index: 1;
+          opacity: 1;
+          background: #fff;
+          border-radius: 100%;
+          width: 28px;
+          height: 28px;
+          padding: 0;
+        }
+      }
+
+      .btn-add-slide-image {
+        font-size: 120px;
+      }
+    }
+  }
+
+  .btn-goto-step span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+  }
+
+  .btn-add-buttons {
+    border-style: dashed;
+    width: 100%;
+  }
+
+  .btn-full-width {
+    width: 100%;
+  }
+
+  .text-error {
+    color: @error-color;
+  }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.float-right {
+  float: right;
+}

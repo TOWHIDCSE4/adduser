@@ -1,0 +1,94 @@
+@media (max-width: @screen-md-max) {
+  #admin {
+    .header {
+      width: 100% !important;
+    }
+
+    .main-layout {
+      margin-left: 0px;
+
+      &.collapsed {
+        margin-left: 0px;
+      }
+
+      &>.content {
+        padding: 16px;
+        margin: -80px 8px 8px 8px;
+        height: auto;
+      }
+
+      .scheduleCard {
+        width: 100%;
+        // margin: auto;
+      }
+    }
+
+    .chatbot-layout {
+      margin-left: 0px;
+
+      &.collapsed {
+        margin-left: 0px;
+      }
+
+      &>.content {
+        padding: 16px;
+        margin: -80px 8px 8px 8px;
+        height: auto;
+      }
+
+      .scheduleCard {
+        width: 100%;
+        // margin: auto;
+      }
+    }
+
+    .backTop {
+      right: 20px;
+      bottom: 20px;
+    }
+
+    .search {
+      .wrapResult {
+        margin: 8px;
+      }
+    }
+
+    //fix scroll table trên mobile
+    /* .ant-table-body {
+      overflow-x: scroll;
+    } */
+    .box{
+      border: none;
+    }
+    .question-box{
+      padding: 0px;
+      //border: 1px solid #e6e6e6;
+      border-radius: 4px;
+      overflow: hidden;
+      .image{
+        margin: auto;
+      }
+      .question{
+        font-size: 18px;
+        font-weight: bold;
+        padding: 20px 20px 10px;
+      }
+      .answers{
+        padding: 0px 20px;
+      }
+      
+      .btn-answer{
+        text-align: center;
+        padding: 20px 0px;
+      }
+      .extraInfo{
+        color: #333;
+        .url{
+          position: absolute;
+          top: 0;
+          right: 0
+        }
+      }
+    }
+  }
+}

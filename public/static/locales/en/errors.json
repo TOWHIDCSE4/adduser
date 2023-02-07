@@ -1,0 +1,37 @@
+{
+  "definitionFile": "File lang này định nghĩa danh sách các lỗi",
+  "-1": "Unable connect to server!",
+  "401": "Token has expired",
+  "403": "You are not authorized!",
+  "6000": "Role does not exist!",
+  "6002": "Role name already exists!!",
+  "6003": "Cannot delete root!",
+  "6004": "Role contains user cannot be deleted!",
+  "6005": "No data",
+  "6006": "User does't exist!",
+  "6007": "Username already exists!",
+  "6012": "The token has expired",
+  "6021": "Email already exists!",
+  "6022": "You can not remove your account.",
+  "6023": "Code verify is not correct",
+  "6026": "Email user already exists!",
+  "6027": "Email tenant already exist!",
+  "6028": "Tenant does't exist!",
+  "6029": "Tenant is active!",
+  "6030": "Tenant contains user cannot be deleted!",
+  "6031": "Tenant contains role cannot be deleted!",
+  "6032": "Role tenant does't exist!",
+
+  "7000": "The account or password is incorrect",
+  "7002": "The data does not exist",
+  "7003": "The data is not correct",
+  "7004": "Please use the latest link!!",
+
+
+  "9994": "Missing parameters",
+  "9995": "Database error",
+  "9996": "Wrong parameters",
+  "9997": "Not access",
+  "9998": "Login require!",
+  "9999": "An unknown error"
+}

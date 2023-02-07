@@ -1,0 +1,39 @@
+{
+  "definitionFile": "File lang này định nghĩa danh sách các lỗi",
+  "-1": "Không thể kết nối với máy chủ!",
+  "401": "Token has expired!",
+  "403": "Bạn không được ủy quyền!",
+  "6000": "Nhóm vai trò không tồn tại!",
+
+  "6002": "Tên nhóm vai trò đã tồn tại!",
+  "6003": "Không thể xóa nhóm gốc!",
+  "6004": "Vai trò chứa người dùng không thể bị xóa. Bạn không thể xóa!",
+  "6005": "Quyền không được để trống",
+  "6006": "Người dùng không tồn tại!",
+  "6007": "Tên đăng kí đã được sử dụng!",
+  
+  "6010": "Agent Number does not exist!",
+  "6011": "DncAccount doesn't exist!",
+  "6012": "The token has expired",
+  "6013": "2FA is already enabled",
+  "6019": "Verify Failed!",
+  "6020": "Please enter OTP!",
+  "6021": "Email already exists!",
+  "6022": "You can not remove your account.",
+  "6023": "Agent already exists in the system",
+  "6024": "Agent Number already exist!",
+  "6025": "Type doesn't exist!",
+
+
+  "7000": "The account or password is incorrect",
+  "7002": "The data does not exist",
+  "7003": "The data is not correct",
+
+
+  "9994": "Missing parameters",
+  "9995": "Database error",
+  "9996": "Wrong parameters",
+  "9997": "Not access",
+  "9998": "Login require!",
+  "9999": "An unknown error"
+}

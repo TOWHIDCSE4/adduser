@@ -1,0 +1,73 @@
+{
+  "definitionFile": "File lang này định nghĩa danh sách tên các message",
+  "form": {
+    "required": "{{name}} is required",
+    "minLength": "{{name}} must be greater than or equal to {{length}} characters",
+    "maxLength": "{{name}} must be less than or equal to {{length}} characters",
+    "gte": "{{name}} must be greater than or equal to {{min}}",
+    "gt": "{{name}} must be larger {{min}}",
+    "lte": "{{name}} must be less than or equal {{max}}",
+    "lt": "{{name}} must be smaller {{max}}",
+    "eq": "{{name}} must be a {{lenghth}} number",
+    "number": "{{name}} must be an integer!",
+    "email": "Email is incorrectly formatted abc@domain.com",
+    "rePassword": "Re enter re-Password",
+    "newPassword": "Password must contain characters, numbers, underscores, and the first character must be a letter",
+    "reNewPassword": "Re-enter a new password and another new password",
+    "username": "Username is a set of characters a-z, 0-9 and can contain characters such as dot (.), underscore (_)",
+    "password": "Password must contain characters, numbers, underscores and the first character must be a letter",
+    "inValidPhone": "Phone number invalid",
+    "invalidPhoneNumber": "Please complete entering your phone number",
+    "invalidEmail": "{{email}} is not a valid email",
+    "invalidEmails": "{{emails}} and {{email}} are not valid emails",
+    "invalidBegin": "The begin must be less than end",
+    "invalidEnd": "The end must be greater than begin",
+    "distanceBeginEnd": "The distance between begin and end should be less than 1000",
+    "descriptionImage": "Mô tả hình ảnh"
+  },
+  "message": {
+		"loginSuccess": "Login successfully",
+		"loginFailed": "Login failed",
+    "forgotPasswordFailed": "Forgot password failed",
+		"signoutConfirm": "Do you want to log out?",
+		"foundErr": "An error occurred. Please try again!",
+		"forgotPasswordSuccess": "Request successful! We've just sent a password reset link to your email.",
+		"resetPasswordSuccess": "Reset password successfully!",
+		"changePasswordSuccess": "Change password successfully!",
+		"signoutSuccess": "Logged out successfully!",
+    "verify2FaSuccess": "Verified 2FA successfully!",
+
+		"recordCreated": "The data has been created successfully!",
+		"recordUpdated": "The data has been updated successfully!",
+		"recordDeleted": "The data has been deleted successfully!",
+		"deleteConfirm": "Are you sure you want to delete this record?",
+    "activeConfirm": "Are you sure you want to active this record?",
+
+		"recordUserCreated": "The user has been created successfully!",
+		"recordUserUpdated": "The user has updated successfully!",
+		"recordUserDeleted": "The user has deleted successfully!",
+
+		"recordAgentCreated": "The agent has been created successfully!",
+		"recordAgentUpdated": "The agent has updated successfully!",
+		"recordAgentDeleted": "The agent has deleted successfully!",
+
+    "recordTenantsCreated": "The tenant has been created successfully!",
+    "recordTenantsUpdated": "The tenant has updated successfully!",
+    "recordTenantsDeleted": "The tenant has deleted successfully!",
+    "recordTenantsactived": "The tenant has actived successfully!",
+
+		"recordRoleCreated": "The role has been added successfully!",
+		"recordRoleUpdated": "The role has been updated successfully!",
+		"recordRoleDeleted": "The role has been deleted successfully!",
+		"staffInsuranceFormSuccess": "The data has been created successfully!",
+		"staffInsuranceFormUpdateSuccess": "The data has been updated successfully!",
+
+    "recordDocumentTemplatesCreated": "The document has been added successfully!",
+		"recordDocumentTemplatesUpdated": "The document has been updated successfully!",
+
+		"enable2FaSuccess": "2FA has been installed successfully. You will need to re-login to continue."
+  },
+  "confirm": {
+    "title": "Confirm"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "hi": "Hi, {{ username }}",
+  "_no": "No",
+  "startLine": "Start line",
+  "loading": "This can take a very long time! Please wait...",
+  "name": "Name",
+  "description": "Description",
+  "create": "Create",
+  "edit": "Edit",
+  "delete": "Delete",
+  "OK": "OK",
+  "NOK": "NOK",
+  "loadingView": "Loading...",
+  "copyright": "© Copyright {{ date }} - MQ ICT Solutions. All Rights Reserved. Version {{ version }}"
+}

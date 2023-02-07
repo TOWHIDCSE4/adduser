@@ -1,0 +1,119 @@
+{
+  "definitionFile": "File lang này định nghĩa danh sách tên các message",
+  "form": {
+    "required": "{{name}} là bắt buộc",
+    "minLength": "{{name}}  phải lớn hơn hoặc bằng {{length}} kí tự",
+    "maxLength": "{{name}} phải nhỏ hơn hoặc bằng {{length}} kí tự",
+    "gte": "{{name}} phải lớn hơn hoặc bằng {{min}}",
+    "gt": "{{name}} phải lớn hơn {{min}}",
+    "lte": "{{name}} phải nhỏ hơn hoặc bằng {{max}}",
+    "lt": "{{name}} phải nhỏ hơn {{max}}",
+    "eq": "{{name}} phải bằng {{lenghth}}",
+    "number": "{{name}} phải là số tự nhiên!",
+    "email": "Email không đúng định dạng abc@domain.com",
+    "rePassword": "Nhập lại mật khẩu không đúng!",
+    "newPassword": "Password must contain characters, numbers, underscores, and the first character must be a letter",
+    "reNewPassword": "Re-enter a new password and another new password",
+    "username": "Tên người dùng là một tập hợp các ký tự a-z, 0-9 và có thể chứa các ký tự như dấu chấm (.), Dấu gạch dưới (_)",
+    "password": "Mật khẩu phải chứa các ký tự, số, dấu gạch dưới và ký tự đầu tiên phải là một chữ cái",
+    "inValidPhone": "SĐT không hợp lệ",
+    "validName": "Chỉ cho phép nhập các ký tự a-z, 0-9 và (_) để thay thế khoảng trắng",
+    "invalidPhoneNumber": "Please complete entering your phone number",
+    "invalidEmail": "{{email}} là email không hợp lệ",
+    "invalidEmails": "{{emails}} và {{email}} là những email không hợp lệ",
+    "invalidBegin": "The begin must be less than end",
+    "invalidEnd": "The end must be greater than begin",
+    "distanceBeginEnd": "The distance between begin and end should be less than 1000",
+    "descriptionImage": "Mô tả hình ảnh",
+    "descriptonTextForUser": "Tin nhắn cho người dùng",
+    "extensionFileImageNotValid": "Image không đúng định dạng cho phép ({{extensionFile}})",
+    "fileUploadNotValid": "Dung lượng file phải nhỏ hơn hoặc bằng {{max}} MB"
+  },
+  "message": {
+    "loginSuccess": "Đăng nhập thành công",
+    "loginFailed": "Đăng nhập thất bại",
+    "signoutConfirm": "Bạn có muốn đăng xuất không?",
+    "foundErr": "Có lỗi xảy ra. Vui lòng thử lại sau!",
+    "forgotPasswordSuccess": "Gửi yêu cầu thành công. Vui lòng kiểm tra email của bạn",
+    "resetPasswordSuccess": "Cài lại mật khẩu thành công!",
+    "changePasswordSuccess": "Đổi mật khẩu thành công!",
+    "signoutSuccess": "Đăng xuất thành công!",
+    "deleteAllConfirm": "Bạn có muốn xóa tất cả bản ghi không?",
+    "notSelectStep": "Bạn cần chọn bước trước!",
+    "notFoundStep": "Không tìm thấy bước đã chọn. Mời bạn chọn lại!",
+
+    "recordDocumentTemplatesCreated": "The document  has been added successfully!",
+		"recordDocumentTemplatesUpdated": "The document has been updated successfully!",
+
+    "recordCreated": "Tạo mới dữ liệu thành công!",
+    "recordUpdated": "Cập nhật dữ liệu thành công!",
+    "recordDeleted": "Xóa dữ liệu thành công!",
+    "deleteConfirm": "Bạn có chắc chắn muốn xóa dữ liệu không?",
+    "confirmRole": "Bạn có chắc chắn gỡ vai trò này đến {{ email }}",
+
+    "recordRoleGroupCreated": "The account group has been added successfully!",
+    "recordRoleGroupUpdated": "The account group has been updated successfully!",
+    "recordRoleGroupDeleted": "The account group has been deleted successfully!",
+
+    "recordGroupCreated": "The group has been added successfully!",
+    "recordGroupUpdated": "The group has been updated successfully!",
+    "recordGroupDeleted": "The group has been deleted successfully!",
+
+    "recordRoleCreated": "The role has updated successfully!",
+
+    "recordBotRoleCreated": "Tạo vai trò trên bot thành công!",
+    "recordBotRoleUpdated": "Chỉnh sửa vai trò trên bot thành công!",
+    "recordBotRoleDeleted": "Gỡ vai trò trên bot thành công!",
+
+    "recordUserCreated": "Tạo mới người dùng thành công!",
+    "recordUserUpdated": "Cập nhật người dùng thành công!",
+    "recordUserDeleted": "Xóa người dùng thành công!",
+
+    "recordBotCreated": "Tạo mới bot thành công!",
+    "recordBotUpdated": "Cập nhật bot thành công!",
+    "recordBotDeleted": "Xóa bot thành công!",
+    "notFoundBot": "Không tìm thấy bot! Vui lòng thử lại sau!",
+
+    "recordEntityCreated": "Tạo mới thực thể thành công!",
+    "recordEntityUpdated": "Cập nhật thực thể thành công!",
+    "recordEntityDeleted": "Xóa thực thể thành công!",
+
+    "recordIntentCreated": "Tạo mới ý định thành công!",
+    "recordIntentUpdated": "Cập nhật ý định thành công!",
+    "recordIntentDeleted": "Xóa ý định thành công!",
+
+    "recordTagCreated": "Tạo mới từ khóa thành công!",
+    "recordTagUpdated": "Cập nhật từ khóa thành công!",
+    "recordTagDeleted": "Xóa từ khóa thành công!",
+
+    "recordSampleSentencesCreated": "Câu mẫu đã được tạo thành công!",
+    "recordSampleSentencesUpdated": "Câu mẫu đã được cập nhật thành công!",
+    "recordSampleSentencesDeleted": "Câu mẫu đã được xoá thành công!",
+
+    "recordStoriesDeleted": "Xoá kịch bản thành công!",
+    "recordStoriesCreated": "Tạo kịch bản mới thành công!",
+    "recordStoriesUpdated": "Chỉnh sửa kịch bản thành công!",
+
+    "recordResponsesCreated": "Tạo bước cho kịch bản thành công!",
+    "recordResponsesUpdated": "Cập nhật bước cho kịch bản thành công!",
+    "recordResponsesDeleted": "Xoá bước thành công!",
+
+    "recordQnADeleted": "Xoá câu hỏi thành công!",
+    "recordQnACreated": "Tạo câu hỏi thành công!",
+    "recordQnAUpdated": "Cập nhật câu hỏi thành công!",
+
+    "recordHistoriesMessageUpdated": "Cập nhật thành công!!",
+    "recordHistoriesMessageCr": "Tạo mới thành công!!",
+
+    
+    "uploadQnASuccess": "Tải file Q&A thành công!",
+
+    "uploadExcelSuccess": "Tải lên file excel thành công!",
+
+    "enable2FaSuccess": "2FA has been installed successfully. You will need to re-login to continue."
+  },
+  "confirm": {
+    "title": "Xác nhận",
+    "deleteRole": "Gỡ vai trò trên bot"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "hi": "Hi, {{ username }}",
+  "_no": "Không",
+  "startLine": "Dòng đầu tiên",
+  "loading": "Điều này có thể mất một thời gian rất dài! Vui lòng chờ...",
+  "name": "Tên",
+  "description": "Mô tả",
+  "create": "Tạo",
+  "edit": "Chỉnh sửa",
+  "delete": "Xóa",
+  "OK": "OK",
+  "NOK": "NOK",
+  "loadingView": "Đang tải...",
+  "copyright": "© Copyright {{ date }} - MQ ICT Solutions. All Rights Reserved. Version {{ version }}"
+}

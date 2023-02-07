@@ -1,0 +1,14 @@
+import Env from '@core/Env';
+
+export default {
+  SECRET_KEY: Env.get("SECRET_KEY", "2wsjLSopTjD6WQEztTYIZgCFou8wpLJn"),
+  SECRET_KEY_ADMIN: Env.get("SECRET_KEY_ADMIN", "4wsjLSopTjD6WQEztTYIZgCFou8wpLJn"),
+  SECRET_KEY_2FA: Env.get("SECRET_KEY_2FA", "4wsjLSopTjD6WQEztTYIZgCFou8wpn"),
+  JWT_SMS_KEY: Env.get("SECRET_KEY", "3wsjLSopTjD6WQEztQYIZgCFou8wpLJl"),
+  JWT_REFRESH_TIME: 86400, //24h
+  JWT_EXPIRE_ADMIN: 86400, //24h
+  JWT_EXPIRE_2FA: Env.get("JWT_EXPIRE_2FA", 300),//5min
+  JWT_EXPIRE_VERYFY_EMAIL: 300,//5min
+  PREFIXADMIN: Env.get("PREFIXADMIN", "admin"),
+  TIMEOUT_DELETE_FILE: Env.get("TIMEOUT_DELETE_FILE", 6000)
+};
