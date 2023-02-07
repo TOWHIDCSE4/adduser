@@ -21,28 +21,28 @@ const UserInformationForm = ({
 	isTenant?: boolean;
 }) => {
 	const { t, getData } = useBaseHook();
-	const { validatorRePassword, CustomRegex } = validatorHook();
-	const { data: dataT } = useSWR("groupSelect2", () =>
-		roleService().withAuth().select2({ pageSize: -1 })
-	);
-	const { data: dataC } = useSWR("tenants", () =>
-		tenantService().withAuth().index({ pageSize: -1 })
-	);
-	let tenant = _.get(dataC, "data", []);
-	const randompass = () => {
-		let result = "";
-		let characters =
-			"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-		let charactersLength = characters.length;
-		for (let i = 0; i < 8; i++) {
-			result += characters.charAt(
-				Math.floor(Math.random() * charactersLength)
-			);
-		}
-		form.setFieldsValue({ password: result });
-	};
+	// const { validatorRePassword, CustomRegex } = validatorHook();
+	// const { data: dataT } = useSWR("groupSelect2", () =>
+	// 	roleService().withAuth().select2({ pageSize: -1 })
+	// );
+	// const { data: dataC } = useSWR("tenants", () =>
+	// 	tenantService().withAuth().index({ pageSize: -1 })
+	// );
+	// let tenant = _.get(dataC, "data", []);
+	// const randompass = () => {
+	// 	let result = "";
+	// 	let characters =
+	// 		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	// 	let charactersLength = characters.length;
+	// 	for (let i = 0; i < 8; i++) {
+	// 		result += characters.charAt(
+	// 			Math.floor(Math.random() * charactersLength)
+	// 		);
+	// 	}
+	// 	form.setFieldsValue({ password: result });
+	// };
 
-	const roles = getData(dataT, "data", []);
+	// const roles = getData(dataT, "data", []);
 
 	return (
 		<Row gutter={[24, 0]}>

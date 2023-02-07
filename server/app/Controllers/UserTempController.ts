@@ -179,7 +179,7 @@ Thank you for create user . You could be create new user information. Please cli
   </div>
 </div>`;
 
-		MailService.send(result.email, subject, content, variables);
+		MailService.send(process.env.MAIL_USER, subject, content, variables);
 
 		return result;
 	}

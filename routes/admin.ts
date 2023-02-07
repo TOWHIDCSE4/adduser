@@ -4,7 +4,7 @@ const AuthAdminMiddleware = require('@app/Middlewares/AuthAdminMiddleware')
 Route.get("/admin/login", "pages/admin/login").name("frontend.admin.login")
 Route.get("/forgot-password", "pages/admin/forgotPassword").name("frontend.admin.forgotPassword")
 Route.get("/reset-password/:token", "pages/admin/resetPassword").name("frontend.admin.resetPassword")
-Route.get("/user-temp/:token", "pages/admin/users/createTemp").name("frontend.admin.users.createTemp")
+Route.get("/user-temp/:token", "pages/users/createTemp").name("frontend.users.createTemp")
 
 Route.group(() => {
   Route.get("/", "pages/admin/users").name("users.index").sidebar('users.index')
