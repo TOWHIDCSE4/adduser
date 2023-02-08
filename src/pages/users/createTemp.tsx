@@ -8,23 +8,30 @@ import { LeftCircleFilled, SaveFilled } from "@ant-design/icons";
 import UserDoneForm from "@root/src/components/Admin/Users/UserInformationForm";
 import Layout from '@src/layouts/Login'
 
+
 // const Layout = dynamic(() => import("@src/layouts/Admin"), { ssr: false });
 
 const CreateTemp = () => {
 	const { t, notify, redirect, router } = useBaseHook();
 	const [loading, setLoading] = useState(false);
+	// const [token, setToken]: any[] = useState();
 	const [form] = Form.useForm();
+	const { query } = router
+	const token = query.token
+	console.log("token", token)
 	//submit form
 	const onFinish = async (values: any): Promise<void> => {
 		setLoading(true);
-		let { rePassword, ...otherValues } = values;
+		let data = { token: token, ...values }
+		// let { rePassword, ...otherValues } = values;
+		console.log("data",data)
 		let [error, result]: any[] = await to(
-			userTempsService().withAuth().create(otherValues)
-		);
+			userTempsService().updateUserTemp({data}));
+
 		setLoading(false);
 		if (error) return notify(t(`errors:${error.code}`), "", "error");
 		notify(t("messages:message.recordUserCreated"));
-		redirect("frontend.admin.users.createTemp");
+		redirect("frontend.admin.login");
 		return result;
 	};
 

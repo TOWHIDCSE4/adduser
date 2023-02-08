@@ -9,6 +9,14 @@ class userTempsService extends Base {
 		});
 	};
 
+	updateUserTemp = async ({ data }: { data: { token: string } }) => {
+		return this.request({
+		  url: "/api/v1/userTemps/:token",
+		  method: "PUT",
+		  data: data,
+		});
+	  }
+
 	create = async (data: any) => {
 		return this.request({
 			url: "/api/v1/userTemps",

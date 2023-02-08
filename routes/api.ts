@@ -21,6 +21,8 @@ const storage = multer.diskStorage({
 const upload = multer({storage:storage})
 const fileUpload = upload.fields([{name:'image-file', maxCount: 1}])
 
+// Route.post()
+
 
 Route.group(() => {
   // ---------------------------------- Auth Routes ---------------------------------------//
@@ -45,6 +47,9 @@ Route.group(() => {
 
   // })
   // ---------------------------------- End Route Document Routes -----------------------------------//
+  Route.put("/userTemps/:token", "UserTempController.updateUserInfo")
+  .name("userInfo.update")
+
 
   Route.group(() => {
 		Route.post("/changePassword", "AuthController.changePassword").name(
@@ -85,10 +90,11 @@ Route.group(() => {
 		// ---------------------------------- End User Routes -----------------------------------//
 
 		// ---------------------------------- User Temp Routes -----------------------------------//
-		Route.resource("/userTemps", "UserTempController")
-			.name("userTemps")
-			.middleware([permissionResource(["users"])]); // CRUD
 
+		Route.resource("/userTemps", "UserTempController")
+		.name("userTemps")
+		.middleware([permissionResource(["users"])]); // CRUD
+		
 		// ---------------------------------- End User Routes -----------------------------------//
 
 		// ---------------------------------- Role Permission Routes ---------------------------------------//
