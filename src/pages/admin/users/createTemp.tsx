@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { Button, Form, Col, Row } from "antd";
 import userTempsService from "@root/src/services/userTempService";
@@ -6,15 +6,41 @@ import to from "await-to-js";
 import useBaseHook from "@src/hooks/BaseHook";
 import { LeftCircleFilled, SaveFilled } from "@ant-design/icons";
 import UserDoneForm from "@root/src/components/Admin/Users/UserInformationForm";
+import userService from "@root/src/services/userService";
 
 const Layout = dynamic(() => import("@src/layouts/Admin"), { ssr: false });
 
 const CreateTemp = () => {
 	const { t, notify, redirect, router } = useBaseHook();
 	const [loading, setLoading] = useState(false);
+	const [token, setToken] = useState(null);
 	const [form] = Form.useForm();
+	const { query } = router;
+
+	const fetchData = async () => {
+		let [userError, user]: any[] = await to(
+			userService().userCheckToken({ data: query })
+		);
+
+		if (userError) {
+			notify(t(`errors:${userError.code}`), "", "error");
+			return redirect("frontend.admin.forgotPassword");
+		}
+
+		console.log("🚀 ~ file: createTemp.tsx:23 ~ fetchData ~ user", user);
+
+		setToken(query.token);
+		return user;
+	};
+
+	useEffect(() => {
+		fetchData();
+	}, []);
+
+
 	//submit form
 	const onFinish = async (values: any): Promise<void> => {
+		console.log("🚀 ~ file: createTemp.tsx:18 ~ onFinish ~ values", values)
 		setLoading(true);
 		let { rePassword, ...otherValues } = values;
 		let [error, result]: any[] = await to(

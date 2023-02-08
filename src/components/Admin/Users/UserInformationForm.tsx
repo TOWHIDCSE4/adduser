@@ -257,7 +257,10 @@ const UserInformationForm = ({
 						},
 					]}
 				>
-					<Input type="date" placeholder={t("pages:users.form.date_of_birth")} />
+					<Input
+						type="date"
+						placeholder={t("pages:users.form.date_of_birth")}
+					/>
 				</Form.Item>
 			</Col>
 

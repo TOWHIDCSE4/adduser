@@ -28,6 +28,9 @@ Route.group(() => {
   Route.post("/forgotPassword", "AuthController.forgotPassword").name('auth.forgotPassword')
   Route.get("/checkToken/:token", "AuthController.checkToken").name('auth.checkToken')
   Route.post("/resetPassword", "AuthController.resetPassword").name('auth.resetPassword')
+  Route.get("/userCheckToken/:token", "UserController.userCheckToken").name(
+		"user.userCheckToken"
+  );
 
   // ---------------------------------- End Auth Routes -----------------------------------//
 
