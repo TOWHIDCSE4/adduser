@@ -11,6 +11,7 @@ import Auth from "@root/server/libs/Auth";
 const logger = Logger("UserTemp");
 import authConfig from "@config/auth";
 import MailService from "@root/server/app/Services/Mail";
+import to from "await-to-js";
 
 export default class AdminController extends BaseController {
 	Model: typeof UserTempModel = UserTempModel;
@@ -294,4 +295,44 @@ Thank you for create user . You could be create new user information. Please cli
 			},
 		};
 	}
+
+	/**
+	 * create new user from email link
+	 * @return {User} 
+	 */
+
+	async createUserFromLink() {
+		return {
+			data: this.request.all(),
+			message:'successfully reached' 
+		};
+	}
+
+	async verifyToken() {
+		const allowFields = {
+		  token: "string!"
+		}
+		let inputs = this.request.all()
+		let params = this.validate(inputs, allowFields, { removeNotAllow: true });
+	
+		let [error, auth] = await to(Auth.verify(params.token, {
+		  key: authConfig['SECRET_KEY_ADMIN']
+		}))
+		if (error){
+		  logger.error(`Critical:Check reset Password ERR: The token has expired`);
+		  logger.error(`Critical:Check reset Password ERR: ${error}`);
+		  throw new ApiException(6012, "The token has expired")
+	
+		}
+		let user = await this.Model.query().where('id', auth.id).first()
+		logger.info(`Check Token [username:${user.username}] `)
+		if (!user){
+		  logger.error(`Critical:Check User ERR: User doesn't exist!`);
+		  throw new ApiException(6006, "User doesn't exist!")
+		} 
+	
+		// delete user.password
+	
+		return user
+	  }
 }

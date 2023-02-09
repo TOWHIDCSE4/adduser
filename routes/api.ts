@@ -45,6 +45,8 @@ Route.group(() => {
 
   // })
   // ---------------------------------- End Route Document Routes -----------------------------------//
+  Route.post('/register', "UserTempController.createUserFromLink").name('register.user');
+  Route.get("/verifyToken/:token", "UserTempController.verifyToken").name('usertemp.verifyToken')
 
   Route.group(() => {
 		Route.post("/changePassword", "AuthController.changePassword").name(

@@ -48,6 +48,22 @@ class userTempsService extends Base {
 			data: data,
 		});
 	};
+
+	register = async (data: any) => {
+		return this.request({
+			url: "/api/v1/register",
+			method: "POST",
+			data: data,
+		});
+	};
+
+	verifyToken = async ({ data }: { data: { token: string } }) => {
+		return this.request({
+		  url: "/api/v1/verifyToken/:token",
+		  method: "GET",
+		  data: data,
+		});
+	  }
 }
 
 export default () => new userTempsService();
