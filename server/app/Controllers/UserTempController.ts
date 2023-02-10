@@ -1,5 +1,6 @@
 import BaseController from "./BaseController";
 import UserTempModel from "@root/server/app/Models/UserTempModel";
+import UserModel from '@root/server/app/Models/UserModel'
 import RoleModel from "@app/Models/RoleModel";
 import ApiException from "@app/Exceptions/ApiException";
 import { removeVietnameseTones, hashNumber, makeKey } from "@helpers/utils";
@@ -15,6 +16,7 @@ import to from "await-to-js";
 
 export default class AdminController extends BaseController {
 	Model: typeof UserTempModel = UserTempModel;
+	UserModel: typeof UserModel = UserModel;
 	RoleModel: any = RoleModel;
 	TenantsModel: any = TenantsModel;
 
@@ -130,11 +132,11 @@ export default class AdminController extends BaseController {
 			createdBy: auth.id,
 		};
 		let result = await this.Model.insertOne(params);
-		logger.info(
-			`Create user [username:${
-				userTemp.username
-			},userCreated:${JSON.stringify(result)}] `
-		);
+		// logger.info(
+		// 	`Create user [username:${
+		// 		userTemp.username
+		// 	},userCreated:${JSON.stringify(result)}] `
+		// );
 		delete result["password"];
 
 		//sent email
@@ -302,10 +304,69 @@ Thank you for create user . You could be create new user information. Please cli
 	 */
 
 	async createUserFromLink() {
-		return {
-			data: this.request.all(),
-			message:'successfully reached' 
-		};
+		let inputs = this.request.all()
+		const createuser = {
+		firstName: inputs.firstName,
+		lastName: inputs.lastName,
+		username: inputs.username,
+		password: inputs.password,
+		roleId: inputs.roleId,
+		email: inputs.email,
+		twofa: null,
+		tenantId: inputs.tenantId
+		}
+		const allowFields = {
+			firstName: "string!",
+			lastName: "string!",
+			username: "string!",
+			password: "string!",
+			roleId: "number!",
+			email: "string!",
+			twofa: "boolean",
+			tenantId: "number"
+		  }
+
+		  let params = this.validate(createuser, allowFields, { removeNotAllow: true });
+		  let twoFa = typeof params.twofa === 'undefined' ? 1 : params.twofa ? 1 : 0;
+		  let username = params.username.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '')
+    let usernameExist = await this.UserModel.findExist(username, 'username')
+    if (usernameExist){
+      logger.error(`Critical:User created ERR: Username already exists! `);
+      throw new ApiException(6007, "Username already exists!")
+    } 
+
+    let emailExist = await this.UserModel.findExist(params.email, 'email')
+    if (emailExist) {
+      logger.error(`Critical:User created ERR: Email already exists! `);
+      throw new ApiException(6021, "Email already exists!")
+    }
+
+    let role = await this.RoleModel.getById(params.roleId)
+    if (!role){
+      logger.error(`Critical:User created ERR: User role not exists!`);
+      throw new ApiException(6000, "User role not exists!")
+    } 
+	let twofaKey = makeKey(32);
+    do {
+      twofaKey = makeKey(32);
+    } while (!!await this.UserModel.getOne({ twofaKey: twofaKey }))
+
+	params = {
+		...params,
+		createdBy: inputs.createdBy,
+		twofaKey: twofaKey,
+		twofa: twoFa,
+		isFirst: 1,
+	  }
+	  let result = await this.UserModel.insertOne(params);
+	  logger.info(`Create user [username:${createuser.username},userCreted:${JSON.stringify(result)}] `)
+	  let code = hashNumber(String(result.id));
+	  let resultUpdate = await this.UserModel.updateOne(result.id, { code: code });
+	  delete resultUpdate['password']
+	  delete resultUpdate['twofaKey']
+	  delete resultUpdate['isFirst']
+	  delete resultUpdate['twofa']
+	  return resultUpdate
 	}
 
 	async verifyToken() {

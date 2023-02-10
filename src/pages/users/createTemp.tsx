@@ -17,19 +17,28 @@ const CreateTemp = () => {
   const [loading, setLoading] = useState(false);
   const [form] = Form.useForm();
   const { query } = router;
+  const [tempuser, setTempUser] = useState(null);
+  const [error, setError] = useState(null);
   //submit form
   const onFinish = async (values: any): Promise<void> => {
-    setLoading(true);
-    console.log(values);
-    // let { rePassword, ...otherValues } = values;
-    // let [error, result]: any[] = await to(
-    // 	userTempsService().withAuth().create(otherValues)
-    // );
-    // setLoading(false);
-    // if (error) return notify(t(`errors:${error.code}`), "", "error");
-    // notify(t("messages:message.recordUserCreated"));
-    // redirect("frontend.admin.users.createTemp");
-    // return result;
+    if(tempuser){
+      setLoading(true);
+      const formvalues = {...values, ...tempuser};
+    console.log(formvalues);
+
+		let [error, result]: any[] = await to(
+			userTempsService().register(formvalues)
+		);
+    console.log(result,'res')
+		setLoading(false);
+		if (error) return notify(t(`errors:${error.code}`), "", "error");
+		notify(t("messages:message.recordUserCreated"));
+		redirect("frontend.admin.login");
+		return result;
+    }else {
+      notify(t(`errors:${error.code}`), "", "error");
+    }
+    
   };
 
   const randompass = () => {
@@ -51,8 +60,14 @@ const CreateTemp = () => {
       //   return redirect('frontend.admin.forgotPassword')
     }
     // setToken(query.token)
-    console.log(user, "user");
-    return user;
+    if(user){
+      setTempUser(user);
+      return user;
+
+    }else{
+      setError(userError)
+      return
+    }
   };
 
   useEffect(() => {
