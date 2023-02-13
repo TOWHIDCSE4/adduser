@@ -95,6 +95,9 @@ export default class AdminController extends BaseController {
   async store() {
     const { auth } = this.request;
     let inputs = this.request.all();
+    let userInfo = {
+      ...inputs
+    }
 
     let userTemp = await this.Model.query().where("id", auth.id).first();
 
@@ -169,8 +172,11 @@ export default class AdminController extends BaseController {
                   color: #ffffff">
       Create new user information</a>
     <br />
-    Dear user, <br/> 
-Thank you for create user . You could be create new user information. Please click this link.
+    Welcome ${userInfo.username}, <br/> 
+    your account has been created. Please enter your information in below link to active your account.
+    After submitting successfully, please use your username and given password to login the system
+    Your password: ${userInfo.password}
+    *Important: Please change your password after login successfully  
 <br/>
     Best regards
   </div>
