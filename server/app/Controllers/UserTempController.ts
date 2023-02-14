@@ -13,6 +13,9 @@ const logger = Logger("UserTemp");
 import authConfig from "@config/auth";
 import MailService from "@root/server/app/Services/Mail";
 import to from "await-to-js";
+import Storage from '@app/Services/Storage';
+import storage from "@config/storage";
+import moment from 'moment-timezone';
 
 export default class AdminController extends BaseController {
 	Model: typeof UserTempModel = UserTempModel;
@@ -304,6 +307,7 @@ Thank you for create user . You could be create new user information. Please cli
 	 */
 
 	async createUserFromLink() {
+		//get all inputs from user
 		let inputs = this.request.all()
 		const createuser = {
 		firstName: inputs.firstName,
@@ -329,6 +333,35 @@ Thank you for create user . You could be create new user information. Please cli
 		  }
 
 		  let params = this.validate(createuser, allowFields, { removeNotAllow: true });
+		  let tenant = await this.TenantsModel.query().findById(inputs.tenantId);
+
+		let { files } = this.request;
+		let directory = storage.FILE_PATH + `/${tenant?removeVietnameseTones(tenant.name):'default'}/${removeVietnameseTones(inputs.username)}`;
+		let fieldnameFile = []
+		let listFile = []
+
+
+		for (let file of files) {
+		let nameTolower = file.originalname.split('.')
+		nameTolower[nameTolower.length - 1] = nameTolower[nameTolower.length - 1].toLowerCase()
+		let nameOldLowerCase = String(moment().unix()) + nameTolower.join('.')
+		let type = [nameTolower[nameTolower.length - 1]]
+		fieldnameFile.push({
+			fieldname: file.fieldname,
+			link: `${directory}/${nameOldLowerCase}`.replace('./public', ''),
+		})
+		Storage.saveToDisk({
+			directory,
+			data: file,
+			fileName: nameOldLowerCase,
+			overwrite: true,
+			size: 30931520, // 30mb
+			type
+		})
+		}
+		
+		
+	
 		  let twoFa = typeof params.twofa === 'undefined' ? 1 : params.twofa ? 1 : 0;
 		  let username = params.username.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '')
     let usernameExist = await this.UserModel.findExist(username, 'username')

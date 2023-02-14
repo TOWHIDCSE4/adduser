@@ -45,7 +45,7 @@ Route.group(() => {
 
   // })
   // ---------------------------------- End Route Document Routes -----------------------------------//
-  Route.post('/register', "UserTempController.createUserFromLink").name('register.user');
+  Route.post('/register', "UserTempController.createUserFromLink").name('register.user').middleware([upload.any(), permission({ 'documents': 'C' })]);
   Route.get("/verifyToken/:token", "UserTempController.verifyToken").name('usertemp.verifyToken')
 
   Route.group(() => {

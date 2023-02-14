@@ -54,6 +54,9 @@ class userTempsService extends Base {
 			url: "/api/v1/register",
 			method: "POST",
 			data: data,
+			options: {
+				allowUpload: true
+			  }
 		});
 	};
 
