@@ -154,7 +154,8 @@
       "twofa":"2FA",
       "tenant": "Tenant",
       "phone": "Phone",
-      "date_of_birth": "Date Of Birth"
+      "date_of_birth": "Date Of Birth",
+      "avatar": "Profile Picture"
     }
   },
 

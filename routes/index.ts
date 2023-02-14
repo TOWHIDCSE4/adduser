@@ -19,14 +19,14 @@ import { v4 as uuidv4 } from "uuid";
 
 
 //  var upload = multer({ dest: '@root/../public/upload/' })
-const DIR = './public/upload/';
+const DIR = './public/';
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, DIR);
     },
     filename: (req, file, cb) => {
         const fileName = file.originalname.toLowerCase().split(' ').join('-');
-        cb(null, uuidv4() + '-' + fileName)
+        cb(null, Math.floor(100000 + Math.random() * 900000) + '-' + fileName)
     }
 });
 var upload = multer({
@@ -47,7 +47,7 @@ var upload = multer({
   //url + '/public/' + req.file.filename
   res.status(201).json({
     message: "User profile image upload successfully!",
-    profileImg: url + '/public/upload/' + req.file.filename
+    profileImg: url + '/public/' + req.file.filename
   })
 })
 Route.router.get('/upload/test', function (req, res, next) {

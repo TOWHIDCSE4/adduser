@@ -313,7 +313,8 @@ Thank you for create user . You could be create new user information. Please cli
 		roleId: inputs.roleId,
 		email: inputs.email,
 		twofa: null,
-		tenantId: inputs.tenantId
+		tenantId: inputs.tenantId,
+		avatar: inputs.avatar
 		}
 		const allowFields = {
 			firstName: "string!",
@@ -323,7 +324,8 @@ Thank you for create user . You could be create new user information. Please cli
 			roleId: "number!",
 			email: "string!",
 			twofa: "boolean",
-			tenantId: "number"
+			tenantId: "number",
+			avatar: "string"
 		  }
 
 		  let params = this.validate(createuser, allowFields, { removeNotAllow: true });

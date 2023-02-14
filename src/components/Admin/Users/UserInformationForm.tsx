@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Input, Row, Col, Select, Button } from "antd";
 import useBaseHook from "@src/hooks/BaseHook";
 import validatorHook from "@src/hooks/ValidatorHook";
-import { LockOutlined, SyncOutlined } from "@ant-design/icons";
+import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import roleService from "@src/services/roleService";
 import tenantService from "@src/services/tenantService";
 import useSWR from "swr";
@@ -10,6 +10,8 @@ const { Search } = Input;
 const { Option } = Select;
 import auth from "@src/helpers/auth";
 import _ from "lodash";
+import UploadMultilField from "../../Upload";
+import axios from "axios";
 
 const UserInformationForm = ({
 	form,
@@ -21,6 +23,25 @@ const UserInformationForm = ({
 	isTenant?: boolean;
 }) => {
 	const { t, getData } = useBaseHook();
+	const handleFileChange = async (files) => {
+		const info = files[0]
+		console.log(info)
+		try {
+			const formData = new FormData();
+			
+			formData.append("profileImg", info);
+			const res = await axios
+			  .post("http://localhost:3333/upload", formData, {}) //update to config
+			  .then((res) => {
+				return res.data.profileImg;
+			  });
+	  
+			form?.setFieldsValue({ 'avatar': res });
+			console.log(res,form?.getFieldsValue());
+		  } catch (error: any) {
+			console.error(error.response?.data);
+		  }
+	}
 	// const { validatorRePassword, CustomRegex } = validatorHook();
 	// const { data: dataT } = useSWR("groupSelect2", () =>
 	// 	roleService().withAuth().select2({ pageSize: -1 })
@@ -258,6 +279,17 @@ const UserInformationForm = ({
 					]}
 				>
 					<Input type="date" placeholder={t("pages:users.form.date_of_birth")} />
+				</Form.Item>
+			</Col>
+			<Col md={12}>
+				<Form.Item
+					label={t("pages:users.form.avatar")}
+					name="avatar"
+					
+				>
+					<UploadMultilField listType="picture-card" isImg={true} onChange={handleFileChange}>
+						<PlusOutlined />
+					</UploadMultilField>
 				</Form.Item>
 			</Col>
 
