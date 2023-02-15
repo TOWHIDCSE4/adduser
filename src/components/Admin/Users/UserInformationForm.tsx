@@ -25,7 +25,7 @@ const UserInformationForm = ({
 }) => {
 	const { t, getData } = useBaseHook();
 	const handleFileChange = async (files) => {
-		const info = files[0]
+		const info = files
 	   form?.setFieldsValue({ 'avatar': info });
 		console.log(info)
 		// try {

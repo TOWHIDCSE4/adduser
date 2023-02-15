@@ -335,30 +335,30 @@ Thank you for create user . You could be create new user information. Please cli
 		  let params = this.validate(createuser, allowFields, { removeNotAllow: true });
 		  let tenant = await this.TenantsModel.query().findById(inputs.tenantId);
 
-		let { files } = this.request;
-		let directory = storage.FILE_PATH + `/${tenant?removeVietnameseTones(tenant.name):'default'}/${removeVietnameseTones(inputs.username)}`;
-		let fieldnameFile = []
-		let listFile = []
-
-
-		for (let file of files) {
-		let nameTolower = file.originalname.split('.')
-		nameTolower[nameTolower.length - 1] = nameTolower[nameTolower.length - 1].toLowerCase()
-		let nameOldLowerCase = String(moment().unix()) + nameTolower.join('.')
-		let type = [nameTolower[nameTolower.length - 1]]
-		fieldnameFile.push({
-			fieldname: file.fieldname,
-			link: `${directory}/${nameOldLowerCase}`.replace('./public', ''),
-		})
-		Storage.saveToDisk({
-			directory,
-			data: file,
-			fileName: nameOldLowerCase,
-			overwrite: true,
-			size: 30931520, // 30mb
-			type
-		})
-		}
+		  let { avatar } = this.request;
+		  let directory = storage.FILE_PATH + `/${tenant?removeVietnameseTones(tenant.name):'default'}/${removeVietnameseTones(createuser.username)}`;
+		  let fieldnameFile = []
+		  let listFile = []
+  
+  
+		  for (let file of avatar) {
+		  let nameTolower = file.originalname.split('.')
+		  nameTolower[nameTolower.length - 1] = nameTolower[nameTolower.length - 1].toLowerCase()
+		  let nameOldLowerCase = String(moment().unix()) + nameTolower.join('.')
+		  let type = [nameTolower[nameTolower.length - 1]]
+		  fieldnameFile.push({
+			  fieldname: file.fieldname,
+			  link: `${directory}/${nameOldLowerCase}`.replace('./public', ''),
+		  })
+		  Storage.saveToDisk({
+			  directory,
+			  data: file,
+			  fileName: nameOldLowerCase,
+			  overwrite: true,
+			  size: 30931520, // 30mb
+			  type
+		  })
+		  }
 		
 		
 	
