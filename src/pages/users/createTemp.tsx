@@ -1,8 +1,8 @@
-import { SaveFilled } from "@ant-design/icons";
+import { LeftCircleFilled, SaveFilled } from "@ant-design/icons";
 import UserDoneForm from "@root/src/components/Admin/Users/UserInformationForm";
 import userTempsService from "@root/src/services/userTempService";
 import useBaseHook from "@src/hooks/BaseHook";
-import Layout from "@src/layouts/Login";
+import Layout from "@src/layouts/User";
 import { Button, Col, Form, Row } from "antd";
 import to from "await-to-js";
 import { useEffect, useState } from "react";
@@ -76,21 +76,8 @@ const CreateTemp = () => {
 
   return (
     <>
-      <div className="content-form">
-        <div className="logo">
-          {/* <div className="img">
-          <img src={publicRuntimeConfig.LOGO}></img>
-        </div> */}
-          {/* <div className="sitename">{t('pages:forgotPassword.content')}</div> */}
-        </div>
-        <div className="form-registration" id="registration">
-          <div className="content-form-login">
-            <div className="sitename-title">Create a new account</div>
-            <div className="sitename">
-              Fill out the information to create a new account
-            </div>
-          </div>
-          <Form
+      <div className="content">
+      <Form
             form={form}
             name="createAdmin"
             layout="vertical"
@@ -101,7 +88,7 @@ const CreateTemp = () => {
               <Col md={{ span: 16, offset: 4 }}>
                 <UserDoneForm form={form} isEdit={false} />
                 <Form.Item
-                  wrapperCol={{ span: 24, offset: 10 }}
+                  wrapperCol={{ span: 8, offset: 8 }}
                   className="text-center"
                 >
                   <Button
@@ -116,8 +103,7 @@ const CreateTemp = () => {
               </Col>
             </Row>
           </Form>
-        </div>
-      </div>
+			</div>
     </>
   );
 };
